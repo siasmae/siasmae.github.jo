@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+ 
+}
+
+h1 {
+  color:red;
+  text-align: left;
+}
+h3{
+    color: violet;
+}
+.bascule{
+    padding-left: 500px;
+}
+table, th, td {
+  border: 1px solid black;
+}
+
+table {
+  width: 100%;
+}
+
+</style>
+</head>
+<body>
+
+<h1>4. - PARAMÈTRES DYNAMIQUES D'UNE BASCULE SYNCHRONE</h1>
+<p>Le constructeur définit un certain nombre de paramètres dynamiques que l'on doit respecter pour obtenir un fonctionnement correct du circuit utilisé.</p>
+<h3>4. 1. - TEMPS DE PRÉPOSITIONNEMENT (SET UP TIME EN ANGLAIS) D'UNE DONNÉE SUR UNE ENTRÉE DÉPENDANTE DE L'HORLOGE</h3>
+<p>Le temps de prépositionnement est le temps minimal pendant lequel la donnée présente sur l'entrée doit rester stable avant le front actif du signal d'horloge pour que celle-ci soit reconnue. <div>Si ce temps n'est pas respecté, la donnée ne sera pas prise en compte par le circuit.</div>
+La figure 37 illustre le temps de prépositionnement (tset up) lorsque la donnée à mémoriser est au niveau L.</p>
+<div class="bascule"><img src="Temps_de_prepositionnement_tset_up_d_une_donnee_au_niveau_L.gif"></div>
+<p>V ref correspond à la tension de basculement des portes du circuit :</p>
+<li > V ref = 1,5 V en technologie TTL tandard.</li>
+<li> V ref = 1,3 V en technologie TTL - LS.</li>
+<li>V ref = VDD / 2 en technologie C.MOS, VDD étant la tension d'alimentation du circuit.</li>
+<p>La figure 38 illustre le temps de prépositionnement lorsque la donnée à mémoriser est au niveau H.</p>
+<div class="bascule"><img src="Temps_de_prepositionnement_tset_up_d_une_donnee_au_niveau_H.gif"></div>
+<p>Les deux chronogrammes des figures 37 et 38 sont souvent réunis en un seul dans les catalogues de constructeurs, comme le montre la figure 39.
+
+    Les périodes hachurées indiquent que la donnée peut varier d'un niveau à l'autre sans qu'il y ait d'influence sur le comportement du circuit.</p>
+    <div class="bascule"><img src="Temps_de_prepositionnement.gif"></div>
+    <h3>4. 2. - TEMPS DE MAINTIEN (HOLD TIME EN ANGLAIS) D'UNE DONNÉE SUR UNE ENTRÉE DÉPENDANTE DE L'HORLOGE</h3>
+<p>Le temps de maintien est le temps minimal pendant lequel la donnée présente sur l'entrée doit rester stable après le front actif de l'horloge pour que cette donnée soit reconnue.
+La figure 40 illustre le temps de maintien (thold) lorsque la donnée à mémoriser est au niveau L.</p>
+    <div class="bascule"><img src="Temps_de_maintien_thold_d_une_donnee_au_niveau_L.gif"></div>
+    <p>La figure 41 illustre le temps de maintien lorsque la donnée à mémoriser est au niveau H.</p>
+<div class="bascule"><img src="a.gif"></div>
+<p>Les deux chronogrammes des figures 40 et 41 peuvent, de la même façon que précédemment, être réunis en un seul, comme le montre la figure 42
+</p>
+<div class="bascule"><img src="b.gif"></div>
+<p>Dans les catalogues de constructeurs, les deux chronogrammes qui représentent les temps de prépositionnement et de maintien sont regroupés en un seul, comme le montre la figure 43.</p>
+<div class="bascule"><img src="c.gif"></div>
+<h3> 4. 3.- TEMPS DE PROPAGATION D'UNE ENTRÉE A UNE SORTIE</h3>
+<h3>4. 3. 1. - TEMPS DE PROPAGATION "tpLH"</h3>
+<p>Le temps de propagation tpLH est le temps qui s'écoule entre l'instant où l'entrée de commande devient active et l'instant où la sortie passe du niveau L au niveau H.
+
+    L'entrée de commande peut être l'entrée d'horloge, l'entrée CLEAR ou l'entrée PRESET. Ce temps noté tpLH est spécifié pour une entrée donnée (CLOCK, CLEAR ou PRESET) et une sortie donnée (Q ou Q_barre.gif).
+    
+    En pratique, ce temps correspond au retard apporté par les portes internes du circuit.
+    
+    La figure 44 illustre le temps tpLH.</p>
+    <div class="bascule"><img src="d.gif"></div>
+    <h3>4. 3. 2. - TEMPS DE PROPAGATION tpHL </h3>
+    <p>Le temps de propagation tpHL est le temps qui s'écoule entre l'instant où l'entrée de commande devient active et l'instant où la sortie passe du niveau H au niveau L.
+
+        La figure 45 illustre ce temps tpHL.</p>
+        <div class="bascule"><img src="e.gif"></div>
+        <h3>4. 4. - FRÉQUENCE MAXIMALE DE L'HORLOGE</h3>
+        <p>Cette fréquence limite de fonctionnement fmax est due au retard apporté par les portes du circuit. Elle correspond à une période minimale 1 / fmax du signal d'horloge comme l'indique la figure 46.</p>
+        <div class="bascule"><img src="f.gif"></div>
+        <p>Après avoir examiné les principes de fonctionnement et les caractéristiques des bascules D et JK, faisons un bref tour d'horizon des circuits intégrés disponibles sur le marché</p>
+</body>
+</html>

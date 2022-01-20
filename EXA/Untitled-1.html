@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head> <title></title>
+<style>
+    body{background-image: url('jk.png');}
+h1{
+    color:red;
+    text-align: center;
+    text-decoration: underline;
+}
+h4{
+    color: saddlebrown;
+    text-align: left;
+}
+p{
+    line-height: 0.08px;
+    text-decoration-style:dotted ;
+    background-image:url("jk.png");
+}
+.bascule{
+    padding-left: 500px;
+}
+a {
+  color: hotpink;}
+
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th {
+  height: 70px;
+}
+</style>
+</head>
+<body> 
+
+<h1>Bascule JK Maître Esclave :</h>
+   <h4>3. - BASCULE JK MAÎTRE ESCLAVE</h4> 
+<h4>3. 1. - REPRÉSENTATION SYMBOLIQUE</h4>
+<p>La bascule JK MAÎTRE ESCLAVE est une autre bascule de type MAÎTRE ESCLAVE.<div> 
+    Comme le montre la figure 29, la bascule JK possède deux entrées notées J et K alors que la bascule D MAÎTRE ESCLAVE n'en possède qu'une seule.</div></p>
+    <div class="bascule"><img src="bascule.gif"></div>
+    <p>On retrouve l'entrée d'horloge CLOCK, les entrées de remise à 0 et de remise à 1 CLEAR et PRESET et les sorties complémentaires Q et Q_barre.gif de la bascule D MAÎTRE ESCLAVE</p>
+<h3>3. 2. - STRUCTURE ET PRINCIPE DE FONCTIONNEMENT</h3>
+<p>La bascule JK MAÎTRE ESCLAVE est élaborée à partir d'une bascule D MAÎTRE ESCLAVE. Il suffit d'ajouter un réseau combinatoire sur l'entrée D (voir figure 30) pour obtenir la bascule JK.</p>
+<div class="bascule"><img src="jk.gif"></div>
+<p>En fonction de l'état des entrées J et K, la sortie S du réseau combinatoire reliée à l'entrée D de la bascule D MAÎTRE ESCLAVE présente l'un des quatre états indiqués à la figure 31-a. <div> est conduit à la table de vérité de la figure 31-b qui donne l'état logique de S en fonction des combinaisons possibles des états logiques des entrées J, K et Q.</div></p>
+<div class="bascule"><img src="Tables de verite.gif"></div>
+<p>Dressons le tableau de Karnaugh (figure 32) pour trouver l'équation la plus simple de S.</p>
+<div class="bascule"><img src="Tableau de Karnaugh.gif"></div>
+<p>Les deux regroupements figurant dans ce tableau permettent de trouver l'équation logique de S suivante :
+
+   <div> S = JQ_barre.gif + K_barre.gifQ</div>
+    
+    En utilisant des portes NAND, le circuit combinatoire suivant (figure 33) peut fournir le signal S :</p>
+    <div class="bascule"><img src="reseau_combinatoire_avec_des_portes_NAND.gif"></div>
+    <h4>3. 3. - EXAMEN DES QUATRE MODES DE FONCTIONNEMENT D'APRÈS LA TABLE DE VÉRITÉ DE LA FIGURE 31-a</h4>
+    <p>Si J = 0 et K = 0, alors S = D = Q. Cela signifie que l'état logique présent en D est le même que celui de la sortie Q. <div>Il ne peut donc y avoir de basculement au moment du front actif de l'horloge et l'état des sorties Q et Q_barre.gif reste inchangé.</div></p>
+    <p>Si J = 0 et K = 1, alors S = D = 0. L'état logique que mémorise la bascule JK lors du front actif de l'horloge est l'état logique 0.<div> C'est la remise à 0 de la bascule qui s'effectue donc de façon synchrone par opposition à l'entrée CLEAR qui elle, est prioritaire et asynchrone</div></p>
+    <p>Si J = 1 et K = 0, alors S = D = 1. L'état logique que mémorise la bascule JK lors du front actif de l'horloge est l'état logique 1.<div> C'est la remise à 1 de la bascule qui est également synchrone.</p>
+<p>Si J = 1 et K = 1, alors S = D = Q_barre.gif. L'état logique qui est mémorisé à la sortie Q lors du front actif de l'horloge est celui de la sortie Q_barre.gif.</p>
+<p>Donc à chaque front actif de l'horloge, la sortie Q bascule pour prendre l'état de Q_barre.gif et vice-versa. Ce mode de fonctionnement déjà vu avec la bascule D MAÎTRE ESCLAVE est le mode TOGGLE.<div> C'est le diviseur de fréquence par 2, les sorties Q et Q_barre.gif sont à une fréquence 2 fois plus petite que la fréquence du signal d'horloge.Donc à chaque front actif de l'horloge, la sortie Q bascule pour prendre l'état de Q_barre.gif et vice-versa. Ce mode de fonctionnement déjà vu avec la bascule D MAÎTRE ESCLAVE est le mode TOGGLE. C'est le diviseur de fréquence par 2, les sorties Q et Q_barre.gif sont à une fréquence 2 fois plus petite que la fréquence du signal d'horloge.</p>
+<h4>3. 4. - TABLE DE VÉRITÉ ET CHRONOGRAMME</h4>
+<p>Le fonctionnement complet de la bascule JK MAÎTRE ESCLAVE est résumé par la table de vérité de la figure 34.</p>
+<p>Les trois premières lignes de cette table indiquent que les entrées CLEAR et PRESET sont prioritaires et actives sur un niveau bas. Les quatre lignes suivantes correspondent aux quatre modes de fonctionnement examinés précédemment.</p>
+<div class="bascule"><img src="Table_de_verite_d_une_bascule_JK.gif"></div>
+<p>Pour illustrer cette table de vérité, examinons le chronogramme de la figure 35.</p>
+<div class="bascule"><img src="Exemple_de_chronogramme_d_une_bascule_JK.gif"></div>
+<p> On remarque sur cette figure que chaque front montant de l'entrée CLOCK est affecté d'une flèche dirigée vers le haut.<div> Cela indique que la bascule JK examinée commute sur le front montant. On suppose que les entrées CLEAR et PRESET sont inactives car on leur applique en permanence l'état logique 1.</div></p>
+
+    <p>Juste avant le premier front actif de l'horloge, les entrées J et K sont à 0. Donc lors de ce front, la bascule ne commute pas et la sortie Q reste dans l'état où elle se trouve, c'est-à-dire ici l'état 0.</p>
+<p>Avant l'application du second front montant de l'horloge, l'entrée J passe à l'état 1. La sortie Q passe donc à l'état 1.
+
+   <div> Au troisième front actif de l'horloge, J = 1 et K = 0. La bascule qui était à l'état 1 reste dans cet état.</div>
+    
+  <div> Au quatrième front actif de l'horloge, J = 0 et K = 1. La bascule commute pour passer à l'état 0.</div>
+    
+   <div> Au cinquième front actif de l'horloge, J= 1 et K = 1. La bascule commute donc pour passer à l'état complémentaire de l'état précédent, soit l'état 1. C'est le mode TOGGLE.</div>
+    
+   <div> Au sixième front actif de l'horloge, J = 1 et K = 1. La bascule commute de nouveau pour passer à l'état 0 (TOGGLE).</div>
+    
+    <div>Au septième front actif de l'horloge, J = 0 et K = 1. La bascule qui était à l'état 0 reste dans cet état.</div>
+    
+   <div> Au huitième front actif de l'horloge, J = 0 et K = 1. La bascule reste à l'état 0.</div>
+    
+   <div> Au neuvième front actif de l'horloge, J = 1 et K = 0. La bascule passe donc à l'état 1.</div>
+    
+<div>Au dixième front actif de l'horloge, J = 0 et K = 0. La bascule ne change pas d'état et reste donc à l'état 1. C'est la position mémoire.</div></p>
+<table>
+    <tr>
+      <th>link </th>
+      <th>les bascule</th>
+    </tr>
+    <tr>
+      <td><p><b><a href="file:///C:/Users/siasm/Desktop/ex/untitled-2.html" target="_blank">This is a link</a></b></p></td>
+
+    <td><p><b><a href="file:///C:/Users/siasm/Desktop/ex/Untitled-3.html" target="_blank">This is a link</a></b></p></td>
+  </tr>
+      <td>*DIFFÉRENTS TYPES DE BASCULES JK</td>
+      <td>*PARAMÈTRES DYNAMIQUES D'UNE BASCULE SYNCHRONE</td>
+    </tr>
+</table>
+</body>
+</html>
