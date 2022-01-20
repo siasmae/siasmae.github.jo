@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    h2{
+        color: rgb(226, 43, 226);
+        text-decoration-color: rgb(182, 134, 71);
+        text-align:left;
+        text-decoration-style: wavy;
+        text-shadow:burlywood ;
+    }
+    p.groove {border-style: groove;
+    color:rgb(76, 56, 189);}
+    .bascule{
+        padding-left: 500px;
+    }
+body{
+    color: rgb(0, 68, 255);
+}
+</style>
+</head>
+<body>
+
+<h2> - DIFFÉRENTS TYPES DE BASCULES JK </h2>
+<p class="groove">Contrairement à la bascule JK décrite précédemment, une majorité de bascules JK sont sensibles aux fronts descendants (Fleche_bas.gif) du signal d'horloge et non pas aux fronts montants (Fleche_haut.gif).
+
+    On trouve aussi des bascules JK MAÎTRE ESCLAVE dont le transfert de la donnée s'effectue en deux temps. Sur le front montant de l'horloge, on mémorise la donnée dans le MAÎTRE,puis celle-ci est transférée à la sortie de l'ESCLAVE sur le front descendant.  
+    
+    Dans les tables de vérité de ces bascules, ce mode de fonctionnement est signalé dans la colonne affecté à l'entrée CLOCK par le symbole P.
+    
+    Comme dans le cas de la bascule D, les entrées PRESET et CLEAR peuvent être actives à l'état 0 ou à l'état 1 selon la constitution interne de la bascule.
+    
+Il existe également des bascules JK à entrées multiples. La figure 36, en représente une qui possède six entrées notées J1, J2, J3, K1, K2, K3.
+    
+    Le fonctionnement d'une telle bascule est analogue à celui d'une bascule JK classique. Il suffit de remplacer J et K par :
+    J = J1 . J2 . J3
+
+    K = K1 . K2 . K3
+    <div class="bascule"><img src="Bascule_JK_a_entrees_multiples.gif"></div>
+   <p> Ce type de bascule servait à réaliser des compteurs. Depuis que ceux-ci sont disponibles sous forme de circuits intégrés, les bascules JK à entrées multiples ne sont plus employées.</p>
+
+
+
+
+</p></body>
+</html>
